@@ -7,3 +7,5 @@ Shift sekarang: A
 
 ## Isi Praktikum
 * Modul 1 : Sensor dan Aktuator
+* Modul 2 : Konfigurasi Jaringan
+* Modul 3 : Protokol Komunikasi
