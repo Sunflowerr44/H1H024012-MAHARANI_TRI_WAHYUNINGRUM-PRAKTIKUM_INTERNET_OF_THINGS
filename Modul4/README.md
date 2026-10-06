@@ -145,14 +145,14 @@ void loop() {
 * constrain(intensitas, 0, 255);: Memastikan nilai intensitas yang masuk tidak berada di luar batas aman 0 hingga 255.   
 * analogWrite(ledPin, intensitas);: Menyuplai tegangan analog terpolarisasi sinyal PWM ke pin LED sehingga kecerahannya menyesuaikan nilai intensitas yang dikirim melalui MQTT
 
-### Pertanyaan dan Jawaban Praktikum Percobaan 3A
+### Pertanyaan dan Jawaban Praktikum Percobaan 4A
 1. Gambarkan diagram alur (flowchart) proses penerimaan dan pemrosesan pesan pada fungsi callback di atas!
 2. Apa yang akan terjadi apabila pesan yang dipublikasikan bukan merupakan format JSON yang valid?
 3. Jelaskan mengapa fungsi client.subscribe() dipanggil di dalam fungsi hubungkanMQTT(), bukan di dalam setup()!
 4. Modifikasi program agar data JSON yang diterima juga memuat nilai intensitas untuk mengatur kecerahan LED menggunakan PWM.
 
 Jawaban:
-1. 
+1. \
 2. Proses parsing data pada fungsi deserializeJson() akan gagal dan mengembalikan kondisi error. Program akan mencetak log "Gagal parsing JSON" pada Serial Monitor, lalu menjalankan instruksi return. Akibatnya, pemrosesan pesan langsung dihentikan sehingga status LED tidak berubah dan tidak mengeksekusi perintah yang salah.
 3. Fungsi client.subscribe() wajib dipanggil setelah koneksi jaringan TCP dan sesi MQTT ke broker berhasil terbentuk. Jika dipanggil di setup(), proses subscribe hanya berjalan sekali di awal dan akan gagal jika broker belum terhubung. Memanggilnya di dalam hubungkanMQTT() menjamin bahwa ESP8266 secara otomatis mendaftar ulang (re-subscribe) ke topik perintah setiap kali terjadi koneksi ulang (reconnect) pasca putus jaringan
 4. 
