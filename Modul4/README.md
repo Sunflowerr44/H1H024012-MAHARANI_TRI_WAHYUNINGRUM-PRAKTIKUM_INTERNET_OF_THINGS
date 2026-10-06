@@ -19,6 +19,7 @@
 
 ### Skematik Percobaan
 Rangkaian terdiri dari ESP8266 yang terhubung ke LED indikator pada GPIO D2 (dengan resistor pembatas arus 220 Ohm) dan sensor suhu/DHT11.
+```text
 +-------------------------------------------------+
 |                  ESP8266 DevKit                 |
 |                                                 |
@@ -27,6 +28,7 @@ Rangkaian terdiri dari ESP8266 yang terhubung ke LED indikator pada GPIO D2 (den
 |   Pin D2    ---- [Resistor] ---- (+) LED        |
 |   Pin D4    -------------------- DATA DHT11     |
 +-------------------------------------------------+
+```
 
 ## Percobaan 4A
 ### Gambaran Umum
